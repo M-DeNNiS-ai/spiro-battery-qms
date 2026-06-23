@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/sw.js",       "headers": { "Cache-Control": "no-cache", "Service-Worker-Allowed": "/" }, "dest": "/public/sw.js" },
+    { "src": "/manifest.json", "headers": { "Content-Type": "application/manifest+json" }, "dest": "/public/manifest.json" },
+    { "src": "/icons/(.*)",  "dest": "/public/icons/$1" },
+    { "src": "/app.jsx",     "headers": { "Content-Type": "text/babel" }, "dest": "/public/app.jsx" },
+    { "src": "/(.*)",        "dest": "/public/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control",        "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Service-Worker-Allowed","value": "/" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options",        "value": "DENY" },
+        { "key": "X-XSS-Protection",       "value": "1; mode=block" }
+      ]
+    }
+  ]
+}
