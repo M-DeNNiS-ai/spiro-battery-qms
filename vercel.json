@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/sw.js",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Service-Worker-Allowed": "/"
+      },
+      "dest": "/sw.js"
+    },
+    {
+      "src": "/manifest.json",
+      "headers": { "Content-Type": "application/manifest+json" },
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/app.jsx",
+      "headers": { "Content-Type": "text/plain" },
+      "dest": "/app.jsx"
+    },
+    {
+      "src": "/icons/(.*)",
+      "dest": "/icons/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
