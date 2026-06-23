@@ -1,16 +1,42 @@
 {
-  "name": "spiro-battery-qms",
-  "version": "1.0.0",
-  "description": "Spiro Uganda Battery Quality Management System — PWA",
-  "private": true,
-  "scripts": {
-    "dev":   "npx serve public -p 3000",
-    "build": "echo 'Static PWA — no build step needed'",
-    "start": "npx serve public -p 3000"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "keywords": ["spiro", "battery", "qms", "pwa", "uganda"],
-  "author": "Spiro Uganda Battery Quality Department"
+  "name": "Spiro Battery QMS",
+  "short_name": "SpiroQMS",
+  "description": "Spiro Uganda Battery Quality Management System — scan, inspect, and route batteries to OneDrive",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0D1B3E",
+  "theme_color": "#0D1B3E",
+  "categories": ["productivity", "utilities"],
+  "lang": "en-UG",
+  "icons": [
+    { "src": "/icons/icon-72x72.png",   "sizes": "72x72",   "type": "image/png" },
+    { "src": "/icons/icon-96x96.png",   "sizes": "96x96",   "type": "image/png" },
+    { "src": "/icons/icon-128x128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/icons/icon-144x144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "/icons/icon-152x152.png", "sizes": "152x152", "type": "image/png" },
+    { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-384x384.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Scan Battery",
+      "short_name": "Scan",
+      "description": "Open the battery scanner directly",
+      "url": "/?view=scan",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View today's statistics",
+      "url": "/?view=dashboard",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
 }
